@@ -21,7 +21,7 @@
 from __future__ import unicode_literals
 
 import logging
-import python-oauth2 
+import oauth2 
 import os
 
 from functools import partial
