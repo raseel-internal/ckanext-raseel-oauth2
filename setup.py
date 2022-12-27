@@ -75,8 +75,8 @@ setup(
         'nose>=1.3.0'
     ],
     install_requires=[
-        'requests-oauthlib==0.8.0',
-        'pyjwt==1.7.1',
+        'requests-oauthlib==1.3.1',
+        'pyjwt==2.6.0',
     ],
     tests_require=[
         'parameterized',
@@ -95,8 +95,8 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         'Intended Audience :: Developers',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP :: Session',
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware',
