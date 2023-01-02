@@ -149,6 +149,7 @@ class OAuth2Plugin(plugins.SingletonPlugin):
     def update_config(self, config):
         # Update our configuration
         log.debug('update config...')
+        self.authorization_endpoint = os.environ.get("CKAN_OAUTH2_AUTHORIZATION_ENDPOINT", config.get('ckan.oauth2.authorization_endpoint', None))
         self.register_url = os.environ.get("CKAN_OAUTH2_REGISTER_URL", config.get('ckan.oauth2.register_url', None))
         self.reset_url = os.environ.get("CKAN_OAUTH2_RESET_URL", config.get('ckan.oauth2.reset_url', None))
         self.edit_url = os.environ.get("CKAN_OAUTH2_EDIT_URL", config.get('ckan.oauth2.edit_url', None))
