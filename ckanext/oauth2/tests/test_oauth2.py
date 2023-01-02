@@ -62,10 +62,10 @@ class OAuth2PluginTest(unittest.TestCase):
 
     def setUp(self):
 
-        self._user_field = 'nickName'
-        self._fullname_field = 'fullname'
-        self._email_field = 'mail'
-        self._profile_api_url = 'https://test/oauth2/user'
+        self._user_field = 'preferred_username'
+        self._fullname_field = 'name'
+        self._email_field = 'email'
+        self._profile_api_url = 'https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/userinfo'
         self._group_field = 'groups'
 
         # Get the functions that can be mocked and affect other tests
@@ -92,10 +92,10 @@ class OAuth2PluginTest(unittest.TestCase):
 
         oauth2.toolkit.config = {
             'ckan.oauth2.legacy_idm': 'false',
-            'ckan.oauth2.authorization_endpoint': 'https://test/oauth2/authorize/',
-            'ckan.oauth2.token_endpoint': 'https://test/oauth2/token/',
-            'ckan.oauth2.client_id': 'client-id',
-            'ckan.oauth2.client_secret': 'client-secret',
+            'ckan.oauth2.authorization_endpoint': 'https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/auth',
+            'ckan.oauth2.token_endpoint': 'https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/token',
+            'ckan.oauth2.client_id': 'opendata',
+            'ckan.oauth2.client_secret': 'Eht0N0PYqy8iDaq7WNEOKWJTWD9E5tzI',
             'ckan.oauth2.profile_api_url': self._profile_api_url,
             'ckan.oauth2.profile_api_user_field': self._user_field,
             'ckan.oauth2.profile_api_mail_field': self._email_field,
