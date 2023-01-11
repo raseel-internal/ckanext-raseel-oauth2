@@ -11,20 +11,25 @@ ckan.plugins = oauth2 <other-plugins>
 
 ## OAuth2 configuration
 
+ckan.plugins = oauth2 <other-plugins>
+
+## OAuth2 configuration
+
 ckan.oauth2.register_url = https://YOUR_OAUTH_SERVICE/users/sign_up
 ckan.oauth2.reset_url = https://YOUR_OAUTH_SERVICE/users/password/new
 ckan.oauth2.edit_url = https://YOUR_OAUTH_SERVICE/settings
-ckan.oauth2.authorization_endpoint = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/auth
-ckan.oauth2.token_endpoint = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/token
-ckan.oauth2.profile_api_url = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/userinfo
-ckan.oauth2.client_id = opendata
-ckan.oauth2.client_secret = Eht0N0PYqy8iDaq7WNEOKWJTWD9E5tzI
+ckan.oauth2.authorization_endpoint = https://YOUR_OAUTH_SERVICE/authorize
+ckan.oauth2.token_endpoint = https://YOUR_OAUTH_SERVICE/token
+ckan.oauth2.profile_api_url = https://YOUR_OAUTH_SERVICE/user
+ckan.oauth2.client_id = YOUR_CLIENT_ID
+ckan.oauth2.client_secret = YOUR_CLIENT_SECRET
 ckan.oauth2.scope = profile other.scope
 ckan.oauth2.rememberer_name = auth_tkt
-ckan.oauth2.profile_api_user_field = preferred_username
-ckan.oauth2.profile_api_fullname_field = name
-ckan.oauth2.profile_api_mail_field = email
+ckan.oauth2.profile_api_user_field = JSON_FIELD_TO_FIND_THE_USER_IDENTIFIER
+ckan.oauth2.profile_api_fullname_field = JSON_FIELD_TO_FIND_THE_USER_FULLNAME
+ckan.oauth2.profile_api_mail_field = JSON_FIELD_TO_FIND_THE_USER_MAIL
 ckan.oauth2.authorization_header = OAUTH2_HEADER
+
 ```
 
 > **Note**: In case you are using FIWARE as OAuth2 provider, this is the concrete OAuth2 configuration you should use (e.g. using FIWARE Lab):
@@ -34,14 +39,14 @@ ckan.oauth2.authorization_header = OAUTH2_HEADER
 > ckan.oauth2.register_url = https://account.lab.fiware.org/users/sign_up
 > ckan.oauth2.reset_url = https://account.lab.fiware.org/users/password/new
 > ckan.oauth2.edit_url = https://account.lab.fiware.org/idm/settings
-> ckan.oauth2.authorization_endpoint = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/auth
-> ckan.oauth2.token_endpoint = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/token
-> ckan.oauth2.profile_api_url = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/userinfo
-> ckan.oauth2.client_id = opendata
-> ckan.oauth2.client_secret = YEht0N0PYqy8iDaq7WNEOKWJTWD9E5tzI
+> ckan.oauth2.authorization_endpoint = https://account.lab.fiware.org/oauth2/authorize
+> ckan.oauth2.token_endpoint = https://account.lab.fiware.org/oauth2/token
+> ckan.oauth2.profile_api_url = https://account.lab.fiware.org/user
+> ckan.oauth2.client_id = YOUR_CLIENT_ID
+> ckan.oauth2.client_secret = YOUR_CLIENT_SECRET
 > ckan.oauth2.scope = all_info
 > ckan.oauth2.profile_api_user_field = id
-> ckan.oauth2.profile_api_fullname_field = preferred_username
+> ckan.oauth2.profile_api_fullname_field = displayName
 > ckan.oauth2.profile_api_mail_field = email
 > ckan.oauth2.authorization_header = Authorization
 > ```
@@ -50,13 +55,13 @@ ckan.oauth2.authorization_header = OAUTH2_HEADER
 >
 > ```
 > ## OAuth2 configuration
-> ckan.oauth2.authorization_endpoint = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/auth
-> ckan.oauth2.token_endpoint = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/token
-> ckan.oauth2.profile_api_url = https://dev-iam.raseel.city/realms/raseel/protocol/openid-connect/userinfo
-> ckan.oauth2.client_id = opendata
-> ckan.oauth2.client_secret = Eht0N0PYqy8iDaq7WNEOKWJTWD9E5tzI
+> ckan.oauth2.authorization_endpoint = https://accounts.google.com/o/oauth2/auth
+> ckan.oauth2.token_endpoint =  https://accounts.google.com/o/oauth2/token
+> ckan.oauth2.profile_api_url =https://www.googleapis.com/oauth2/v1/userinfo
+> ckan.oauth2.client_id =YOUR_CLIENT_ID
+> ckan.oauth2.client_secret = YOUR_CLIENT_SECRET
 > ckan.oauth2.scope = openid email profile
-> ckan.oauth2.profile_api_user_field = preferred_username
+> ckan.oauth2.profile_api_user_field = email
 > ckan.oauth2.profile_api_fullname_field = name
 > ckan.oauth2.profile_api_mail_field = email
 > ckan.oauth2.authorization_header = Authorization
