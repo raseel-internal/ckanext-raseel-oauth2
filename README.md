@@ -2,7 +2,7 @@
 
 The OAuth2 extension allows site visitors to login through an OAuth2 server.
 
-**Note**: This extension is version upgraded of (https://github.com/conwetlab/ckanext-oauth2)
+**Note**: This extension is the updated version of (https://github.com/conwetlab/ckanext-oauth2)
 
 ## Credits
 
